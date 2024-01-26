@@ -26,6 +26,7 @@ layout_mode = 2
 
 [node name="Play" type="Button" parent="MainMenu/CenterContainer/MainContainer"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../Options")
 text = "PLAY"
 
 [node name="Resume" type="Button" parent="MainMenu/CenterContainer/MainContainer"]
@@ -40,10 +41,13 @@ text = "GIVE UP"
 
 [node name="Options" type="Button" parent="MainMenu/CenterContainer/MainContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Play")
+focus_neighbor_bottom = NodePath("../Quit")
 text = "STUFF"
 
 [node name="Quit" type="Button" parent="MainMenu/CenterContainer/MainContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Options")
 text = "QUIT"
 
 [node name="OptionsMenu" type="MarginContainer" parent="."]

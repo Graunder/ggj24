@@ -54,6 +54,11 @@ func enable_options_menu(enable_options : bool):
 	if enable_options:
 		main_menu.hide()
 		options_menu.show()
+		back.grab_focus()
 	else:
 		options_menu.hide()
 		main_menu.show()
+		options.grab_focus()
+		
+func grab_start_focus():
+	play.grab_focus()
