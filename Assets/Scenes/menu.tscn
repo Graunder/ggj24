@@ -32,11 +32,14 @@ text = "PLAY"
 [node name="Resume" type="Button" parent="MainMenu/CenterContainer/MainContainer"]
 visible = false
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../Give_Up")
 text = "RESUME"
 
 [node name="Give_Up" type="Button" parent="MainMenu/CenterContainer/MainContainer"]
 visible = false
 layout_mode = 2
+focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_bottom = NodePath("../Options")
 text = "GIVE UP"
 
 [node name="Options" type="Button" parent="MainMenu/CenterContainer/MainContainer"]
@@ -89,6 +92,7 @@ text = "BACK
 "
 
 [node name="Apply" type="Button" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "HUE"

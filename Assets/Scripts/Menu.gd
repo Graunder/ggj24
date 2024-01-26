@@ -45,10 +45,17 @@ func switch_play_button(switch_buttons : bool):
 		play.hide()
 		resume.show()
 		give_up.show()
+		resume.grab_focus()
+		resume.focus_neighbor_bottom = give_up.get_path()
+		give_up.focus_neighbor_top = resume.get_path()
+		give_up.focus_neighbor_bottom = options.get_path()
+		options.focus_neighbor_top = give_up.get_path()
 	else:
 		play.show()
 		resume.hide()
 		give_up.hide()
+		play.grab_focus()
+		options.focus_neighbor_top = play.get_path()
 
 func enable_options_menu(enable_options : bool):
 	if enable_options:
@@ -62,3 +69,6 @@ func enable_options_menu(enable_options : bool):
 		
 func grab_start_focus():
 	play.grab_focus()
+	
+func grab_resume_focus():
+	resume.grab_focus()

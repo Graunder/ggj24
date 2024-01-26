@@ -48,4 +48,5 @@ func _process(delta):
 			game_pause(false)
 		else:
 			game_pause(true)
+			menu.grab_resume_focus()
 
