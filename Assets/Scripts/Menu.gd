@@ -7,15 +7,15 @@ extends Control
 @onready var options_menu = $OptionsMenu
 
 #Main menu buttons
-@onready var play = $MainMenu/MainContainer/Play
-@onready var resume = $MainMenu/MainContainer/Resume
-@onready var give_up = $MainMenu/MainContainer/Give_Up
-@onready var options = $MainMenu/MainContainer/Options
-@onready var quit = $MainMenu/MainContainer/Quit
+@onready var play = $MainMenu/CenterContainer/MainContainer/Play
+@onready var resume = $MainMenu/CenterContainer/MainContainer/Resume
+@onready var give_up = $MainMenu/CenterContainer/MainContainer/Give_Up
+@onready var options = $MainMenu/CenterContainer/MainContainer/Options
+@onready var quit = $MainMenu/CenterContainer/MainContainer/Quit
 
 #Options menu buttons
-@onready var back = $OptionsMenu/VBoxContainer/HBoxContainer/Back
-@onready var apply = $OptionsMenu/VBoxContainer/HBoxContainer/Apply
+@onready var back = $OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer/Back
+@onready var apply = $OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer/Apply
 
 func _on_play_pressed():
 	main.load_dev_scene()
