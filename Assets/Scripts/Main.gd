@@ -28,17 +28,17 @@ func game_pause(should_pause : bool):
 	level.get_tree().paused = should_pause
 	if (should_pause):
 		menu.show()
-		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+		#Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	else:
 		menu.hide()
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func reset_pause():
 	level.get_tree().paused = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
