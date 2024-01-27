@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://be2541wnqotc2"]
+[gd_scene load_steps=5 format=3 uid="uid://be2541wnqotc2"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Player.gd" id="1_px25y"]
+[ext_resource type="Texture2D" uid="uid://cq1l0ppum40q6" path="res://Assets/Textures/Sprites/Temp_Player.png" id="1_wpugi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfkx7"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akmyt"]
+size = Vector2(68, 68)
 
 [node name="DevLevel" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_px25y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_pfkx7")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_wpugi")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+shape = SubResource("RectangleShape2D_akmyt")
