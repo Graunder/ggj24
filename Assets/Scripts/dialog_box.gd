@@ -1,12 +1,15 @@
 extends Control
 
 @onready var start_text = $MarginContainer/Panel/StartText
-@onready var knock_button = $MarginContainer/Panel/KnockButton
+#@onready var knock_button = $MarginContainer/Panel/KnockButton
+@onready var knock_button = $MarginContainer/Panel/KnockButton/Button2
 @onready var knock_text = $MarginContainer/Panel/KnockText
 @onready var answer_text = $MarginContainer/Panel/AnswerText
-@onready var name_button = $MarginContainer/Panel/NameButton
+#@onready var name_button = $MarginContainer/Panel/NameButton
+@onready var name_button = $MarginContainer/Panel/NameButton/Button2
 @onready var name_answer_text = $MarginContainer/Panel/NameAnswerText
-@onready var line = $MarginContainer/Panel/Line
+#@onready var line = $MarginContainer/Panel/Line
+@onready var line = $MarginContainer/Panel/Line/Button2
 @onready var line_text = $MarginContainer/Panel/LineText
 
 var main : Node
@@ -33,8 +36,12 @@ func tell_name():
 	line.grab_focus()
 	
 func show_punchline():
+	name_answer_text.hide()
 	line.hide()
 	line_text.show()
 	await get_tree().create_timer(2.0).timeout
 	main.reset_pause()
 	queue_free()
+	
+func trigger_focus():
+	knock_button.grab_focus()

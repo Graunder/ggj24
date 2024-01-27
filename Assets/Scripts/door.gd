@@ -1,13 +1,15 @@
 extends Node2D
 
 var main : Node
-var menu : Camera2D
+var camera : Camera2D
+var menu : Control
 
 var dialog_instance
 
 func _ready():
 	main = get_tree().get_root().get_node("main")
-	menu = get_tree().get_root().get_node("Menu")
+	camera = main.get_node("Camera")
+	menu = camera.get_node("Menu")
 
 func _on_area_2d_body_entered(body):
 	if(body.get_name() == "Player"):
@@ -16,5 +18,8 @@ func _on_area_2d_body_entered(body):
 		var dialog_box_resource := load(dialog_box_path)
 		if(dialog_box_resource):
 			dialog_instance = dialog_box_resource.instantiate()
-			menu.add_child(dialog_instance)
+			camera.add_child(dialog_instance)
+			var box = camera.get_node("Dialog_Box")
+			var btn = box.get_node("MarginContainer/Panel/KnockButton")
+			btn.grab_focus()
 		#queue_free()
