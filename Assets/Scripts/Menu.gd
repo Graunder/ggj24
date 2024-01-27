@@ -2,7 +2,7 @@ extends Control
 
 @onready var main = $"../.."
 @onready var level = $"../../Level"
-@onready var character_body_2d = $"../../Level/CharacterBody2D"
+@onready var player = $"../../Level/Player"
 
 #Menus
 @onready var main_menu = $MainMenu
@@ -22,7 +22,7 @@ extends Control
 func _on_play_pressed():
 	main.load_dev_scene()
 	level.get_tree().paused = false
-	character_body_2d.show()
+	player.show()
 
 func _on_quit_pressed():
 	get_tree().quit()
@@ -36,7 +36,7 @@ func _on_give_up_pressed():
 	main.reset_pause()
 	switch_play_button(false)
 	level.get_tree().paused = true
-	character_body_2d.hide()
+	player.hide()
 
 func _on_options_pressed():
 	enable_options_menu(true)

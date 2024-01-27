@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm8ghfnphcmgs"]
+
+[ext_resource type="Texture2D" uid="uid://bdb48h8e6evcj" path="res://Assets/Textures/Sprites/Temp_door.png" id="1_3rkjv"]
+[ext_resource type="Script" path="res://Assets/Scripts/door.gd" id="1_mfmu4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80see"]
+size = Vector2(320, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxcqx"]
+size = Vector2(192, 192)
+
+[node name="Door" type="Node2D"]
+script = ExtResource("1_mfmu4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3rkjv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_80see")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_hxcqx")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -22,29 +22,29 @@ script = ExtResource("1_3o3yr")
 [node name="Level" type="Node3D" parent="."]
 process_mode = 1
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Level"]
+[node name="Player" type="CharacterBody2D" parent="Level"]
 visible = false
 script = ExtResource("3_ufkiy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Player"]
 shape = SubResource("RectangleShape2D_rj1b5")
 
-[node name="Sprite2D" type="Sprite2D" parent="Level/CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Level/Player"]
 texture = ExtResource("4_q0qbp")
 
-[node name="Area2D" type="Area2D" parent="Level/CharacterBody2D"]
+[node name="Area2D" type="Area2D" parent="Level/Player"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CharacterBody2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Player/Area2D"]
 shape = SubResource("RectangleShape2D_204an")
 
-[node name="Target" type="Node2D" parent="Level/CharacterBody2D"]
+[node name="Target" type="Node2D" parent="Level/Player"]
 script = ExtResource("4_fawq8")
 
-[node name="Sprite2D" type="Sprite2D" parent="Level/CharacterBody2D/Target"]
+[node name="Sprite2D" type="Sprite2D" parent="Level/Player/Target"]
 z_index = 10
 texture = ExtResource("4_lf3fo")
 
-[node name="PointLight2D" type="PointLight2D" parent="Level/CharacterBody2D"]
+[node name="PointLight2D" type="PointLight2D" parent="Level/Player"]
 color = Color(0.956863, 0.964706, 0.952941, 0.894118)
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.870588)

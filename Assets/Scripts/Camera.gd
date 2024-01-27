@@ -1,6 +1,6 @@
 extends Camera2D
 
-@onready var character_body_2d = $"../Level/CharacterBody2D"
+@onready var player = $"../Level/Player"
 
 func _process(delta):
-	position = character_body_2d.position
+	position = player.position

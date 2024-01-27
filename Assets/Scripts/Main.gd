@@ -2,7 +2,7 @@ extends Node
 
 @onready var menu = $Camera/Menu
 @onready var level = $Level
-@onready var character_body_2d = $Level/CharacterBody2D
+@onready var player = $Level/Player
 
 var level_instance
 
