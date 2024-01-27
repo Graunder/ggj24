@@ -24,6 +24,7 @@ process_mode = 1
 
 [node name="Player" type="CharacterBody2D" parent="Level"]
 visible = false
+z_index = 2
 script = ExtResource("3_ufkiy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Player"]

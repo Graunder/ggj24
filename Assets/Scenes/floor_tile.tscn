@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://madaf4iw7hn4"]
+
+[ext_resource type="Texture2D" uid="uid://omosv1tnspbd" path="res://Assets/Textures/Sprites/Temp_Ground.png" id="1_6l6x0"]
+
+[node name="Floor_Tile" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6l6x0")
