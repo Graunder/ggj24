@@ -19,6 +19,20 @@ script = ExtResource("1_3o3yr")
 [node name="Level" type="Node3D" parent="."]
 process_mode = 1
 
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Level"]
+script = ExtResource("3_ufkiy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CharacterBody2D"]
+shape = SubResource("RectangleShape2D_rj1b5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/CharacterBody2D"]
+texture = ExtResource("4_q0qbp")
+
+[node name="Area2D" type="Area2D" parent="Level/CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CharacterBody2D/Area2D"]
+shape = SubResource("RectangleShape2D_204an")
+
 [node name="Camera" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 script = ExtResource("2_3t4gq")
@@ -33,17 +47,3 @@ offset_right = -640.0
 offset_bottom = -400.0
 grow_horizontal = 1
 grow_vertical = 1
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("3_ufkiy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("RectangleShape2D_rj1b5")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("4_q0qbp")
-
-[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
-shape = SubResource("RectangleShape2D_204an")

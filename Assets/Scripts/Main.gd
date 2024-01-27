@@ -23,6 +23,7 @@ func load_level(level_name : String):
 func load_dev_scene():
 	menu.switch_play_button(true)
 	load_level("DEV_Level")
+	level.get_tree().paused = false
 
 func game_pause(should_pause : bool):
 	level.get_tree().paused = should_pause
@@ -39,6 +40,7 @@ func reset_pause():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	level.get_tree().paused = true
 	menu.grab_start_focus()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
