@@ -6,6 +6,8 @@ var menu : Control
 
 var dialog_instance
 
+
+
 func _ready():
 	main = get_tree().get_root().get_node("main")
 	camera = main.get_node("Camera")
@@ -20,6 +22,12 @@ func _on_area_2d_body_entered(body):
 			dialog_instance = dialog_box_resource.instantiate()
 			camera.add_child(dialog_instance)
 			var box = camera.get_node("Dialog_Box")
-			var btn = box.get_node("MarginContainer/Panel/KnockButton")
-			btn.grab_focus()
+			await box.door_interaction_complete
+			free()
+			#await box.isDone
+			#queue_free()
+			#var btn = box.get_node("MarginContainer/Panel/KnockButton")
+			#btn.grab_focus()
+		
+		#await get_tree().create_timer(1.0).timeout
 		#queue_free()

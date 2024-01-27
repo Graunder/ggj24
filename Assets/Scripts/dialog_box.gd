@@ -13,6 +13,7 @@ extends Control
 @onready var line_text = $MarginContainer/Panel/LineText
 
 var main : Node
+signal door_interaction_complete
 
 func _ready():
 	main = get_tree().get_root().get_node("main")
@@ -41,7 +42,9 @@ func show_punchline():
 	line_text.show()
 	await get_tree().create_timer(2.0).timeout
 	main.reset_pause()
-	queue_free()
+	door_interaction_complete.emit()
+	free()
 	
 func trigger_focus():
 	knock_button.grab_focus()
+
