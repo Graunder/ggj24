@@ -178,7 +178,8 @@ texture = ExtResource("2_x80jg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(567, -3799.5)
+texture_repeat = 2
+position = Vector2(447, -2577)
 scale = Vector2(183.219, 162.641)
 texture = ExtResource("1_kimwi")
 
