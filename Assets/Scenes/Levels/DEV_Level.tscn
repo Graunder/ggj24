@@ -195,3 +195,36 @@ rotation = 1.5708
 [node name="Door2" parent="." instance=ExtResource("4_c7plc")]
 position = Vector2(-200, -925)
 rotation = 1.5708
+
+[node name="Door3" parent="." instance=ExtResource("4_c7plc")]
+position = Vector2(-1287, -1373)
+
+[node name="Door4" parent="." instance=ExtResource("4_c7plc")]
+position = Vector2(-200, -2269)
+rotation = 1.5708
+
+[node name="Door5" parent="." instance=ExtResource("4_c7plc")]
+position = Vector2(185, -2589)
+rotation = 1.5708
+
+[node name="Door6" parent="." instance=ExtResource("4_c7plc")]
+position = Vector2(1016, -1821)
+
+[node name="Door7" parent="." instance=ExtResource("4_c7plc")]
+position = Vector2(1848, -733)
+rotation = 1.57079
+
+[node name="Door8" parent="." instance=ExtResource("4_c7plc")]
+position = Vector2(-1288, -4765)
+
+[node name="Door9" parent="." instance=ExtResource("4_c7plc")]
+position = Vector2(760, -3933)
+rotation = 1.5708
+
+[node name="Door10" parent="." instance=ExtResource("4_c7plc")]
+position = Vector2(1080, -5597)
+rotation = 1.5708
+
+[node name="Door12" parent="." instance=ExtResource("4_c7plc")]
+position = Vector2(-457, -3933)
+rotation = 1.57079
