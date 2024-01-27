@@ -20,6 +20,7 @@ script = ExtResource("1_3o3yr")
 process_mode = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Level"]
+visible = false
 script = ExtResource("3_ufkiy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/CharacterBody2D"]
