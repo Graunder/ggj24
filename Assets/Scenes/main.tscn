@@ -1,13 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://2ellra2i5itc"]
+[gd_scene load_steps=8 format=3 uid="uid://2ellra2i5itc"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_3o3yr"]
+[ext_resource type="Script" path="res://Assets/Scripts/Camera.gd" id="2_3t4gq"]
 [ext_resource type="PackedScene" uid="uid://kb27rxm082xw" path="res://Assets/Scenes/menu.tscn" id="2_us0qy"]
+[ext_resource type="Script" path="res://Assets/Scripts/Player.gd" id="3_ufkiy"]
+[ext_resource type="Texture2D" uid="uid://cq1l0ppum40q6" path="res://Assets/Textures/Sprites/Temp_Player.png" id="4_q0qbp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj1b5"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_204an"]
+size = Vector2(68, 68)
 
 [node name="main" type="Node"]
 process_mode = 3
 script = ExtResource("1_3o3yr")
 
-[node name="Menu" parent="." instance=ExtResource("2_us0qy")]
-
 [node name="Level" type="Node3D" parent="."]
 process_mode = 1
+
+[node name="Camera" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+script = ExtResource("2_3t4gq")
+
+[node name="Menu" parent="Camera" instance=ExtResource("2_us0qy")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -640.0
+offset_top = -400.0
+offset_right = -640.0
+offset_bottom = -400.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("3_ufkiy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_rj1b5")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("4_q0qbp")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+shape = SubResource("RectangleShape2D_204an")

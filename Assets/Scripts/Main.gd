@@ -1,6 +1,6 @@
 extends Node
 
-@onready var menu = $Menu
+@onready var menu = $Camera/Menu
 @onready var level = $Level
 
 var level_instance
