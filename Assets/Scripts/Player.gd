@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var moveSpeed = 100
+var moveSpeed = 500
 
 @onready var target = $Target
 

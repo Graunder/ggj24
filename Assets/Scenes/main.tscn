@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://2ellra2i5itc"]
+[gd_scene load_steps=11 format=3 uid="uid://2ellra2i5itc"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_3o3yr"]
 [ext_resource type="Script" path="res://Assets/Scripts/Camera.gd" id="2_3t4gq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Target.gd" id="4_fawq8"]
 [ext_resource type="Texture2D" uid="uid://bm4xvfswfx2xb" path="res://Assets/Textures/Sprites/Temp_Target.png" id="4_lf3fo"]
 [ext_resource type="Texture2D" uid="uid://cq1l0ppum40q6" path="res://Assets/Textures/Sprites/Temp_Player.png" id="4_q0qbp"]
+[ext_resource type="Texture2D" uid="uid://hxmaia1ot0l4" path="res://Assets/Textures/Sprites/light.png" id="6_k3hrs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rj1b5"]
 size = Vector2(64, 64)
@@ -40,7 +41,14 @@ shape = SubResource("RectangleShape2D_204an")
 script = ExtResource("4_fawq8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Level/CharacterBody2D/Target"]
+z_index = 10
 texture = ExtResource("4_lf3fo")
+
+[node name="PointLight2D" type="PointLight2D" parent="Level/CharacterBody2D"]
+color = Color(0.956863, 0.964706, 0.952941, 0.894118)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.870588)
+texture = ExtResource("6_k3hrs")
 
 [node name="Camera" type="Camera2D" parent="."]
 position_smoothing_enabled = true
@@ -48,6 +56,7 @@ position_smoothing_speed = 10.0
 script = ExtResource("2_3t4gq")
 
 [node name="Menu" parent="Camera" instance=ExtResource("2_us0qy")]
+z_index = 50
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0

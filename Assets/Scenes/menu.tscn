@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://kb27rxm082xw"]
+[gd_scene load_steps=3 format=3 uid="uid://kb27rxm082xw"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Menu.gd" id="1_hulx2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82vas"]
+bg_color = Color(0.454902, 0.454902, 0.439216, 1)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -13,12 +16,17 @@ script = ExtResource("1_hulx2")
 
 [node name="MainMenu" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 25.0
-offset_right = 525.0
+offset_left = 50.0
+offset_right = 570.0
 offset_bottom = 800.0
 
 [node name="CenterContainer" type="CenterContainer" parent="MainMenu"]
 layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MainMenu/CenterContainer"]
+custom_minimum_size = Vector2(520, 800)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_82vas")
 
 [node name="MainContainer" type="VBoxContainer" parent="MainMenu/CenterContainer"]
 custom_minimum_size = Vector2(500, 0)
@@ -60,6 +68,11 @@ layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 800.0
 pivot_offset = Vector2(500, 400)
+
+[node name="Panel2" type="Panel" parent="OptionsMenu"]
+custom_minimum_size = Vector2(520, 800)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_82vas")
 
 [node name="CenterContainer" type="CenterContainer" parent="OptionsMenu"]
 layout_mode = 2

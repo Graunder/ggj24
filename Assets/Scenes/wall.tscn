@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd81jf2fqha5s"]
+
+[ext_resource type="Texture2D" uid="uid://bq46me7ahdarg" path="res://Assets/Textures/Sprites/Temp_Wall.png" id="1_71ape"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17bfy"]
+size = Vector2(64, 64)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fc3aj"]
+polygon = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+
+[node name="Wall" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_71ape")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_17bfy")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+occluder = SubResource("OccluderPolygon2D_fc3aj")
