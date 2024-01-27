@@ -35,6 +35,9 @@ func game_pause(should_pause : bool):
 		menu.hide()
 		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+func simple_pause():
+	level.get_tree().paused = true
+
 func reset_pause():
 	level.get_tree().paused = false
 

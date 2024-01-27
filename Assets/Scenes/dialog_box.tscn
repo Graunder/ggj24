@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://c33ef5g4k58ra"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1180, 300)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -590.0
+offset_top = -350.0
+offset_right = 590.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Knock" type="HBoxContainer" parent="MarginContainer/Panel"]
+custom_minimum_size = Vector2(900, 40)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -454.0
+offset_top = -80.0
+offset_right = 454.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button2" type="Button" parent="MarginContainer/Panel/Knock"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "KNOCK KNOCK"
+
+[node name="Topic" type="HBoxContainer" parent="MarginContainer/Panel"]
+visible = false
+custom_minimum_size = Vector2(900, 40)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -454.0
+offset_top = -80.0
+offset_right = 454.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/Topic"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_right = NodePath("../Button2")
+text = "HE HE HE"
+
+[node name="Button2" type="Button" parent="MarginContainer/Panel/Topic"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Button")
+focus_neighbor_right = NodePath("../Button3")
+text = "HE HE HE"
+
+[node name="Button3" type="Button" parent="MarginContainer/Panel/Topic"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Button2")
+text = "HE HE HE"
+
+[node name="Answer" type="HBoxContainer" parent="MarginContainer/Panel"]
+visible = false
+custom_minimum_size = Vector2(900, 40)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -454.0
+offset_top = -80.0
+offset_right = 454.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/Answer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_right = NodePath("../Button2")
+text = "HE HE HE"
+
+[node name="Button2" type="Button" parent="MarginContainer/Panel/Answer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Button")
+focus_neighbor_right = NodePath("../Button3")
+text = "HE HE HE"
+
+[node name="Button3" type="Button" parent="MarginContainer/Panel/Answer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Button2")
+text = "HE HE HE"
+
+[node name="StartText" type="RichTextLabel" parent="MarginContainer/Panel"]
+custom_minimum_size = Vector2(900, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -110.0
+offset_right = 450.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size={100}][center][b]*... ... ...*[/b][/center][/font_size]"
+fit_content = true
+scroll_active = false
