@@ -6,16 +6,16 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Player.gd" id="3_ufkiy"]
 [ext_resource type="Script" path="res://Assets/Scripts/Target.gd" id="4_fawq8"]
 [ext_resource type="Texture2D" uid="uid://bm4xvfswfx2xb" path="res://Assets/Textures/Sprites/Temp_Target.png" id="4_lf3fo"]
-[ext_resource type="Texture2D" uid="uid://cq1l0ppum40q6" path="res://Assets/Textures/Sprites/Temp_Player.png" id="4_q0qbp"]
+[ext_resource type="Texture2D" uid="uid://dxqqh8vp6agpn" path="res://Assets/Textures/Sprites/Player.png" id="5_lav37"]
 [ext_resource type="Texture2D" uid="uid://hxmaia1ot0l4" path="res://Assets/Textures/Sprites/light.png" id="6_k3hrs"]
 [ext_resource type="AudioStream" uid="uid://dk568hlhi68nq" path="res://Assets/SFX/Cyberpunk Moonlight Sonata.mp3" id="9_blw38"]
 [ext_resource type="AudioStream" uid="uid://bcnj2bgr80tjl" path="res://Assets/SFX/FBi.wav" id="10_dvlch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rj1b5"]
-size = Vector2(64, 64)
+size = Vector2(56, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_204an"]
-size = Vector2(68, 68)
+size = Vector2(56, 60)
 
 [node name="main" type="Node"]
 process_mode = 3
@@ -38,14 +38,16 @@ z_index = 2
 script = ExtResource("3_ufkiy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Player"]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_rj1b5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Level/Player"]
-texture = ExtResource("4_q0qbp")
+texture = ExtResource("5_lav37")
 
 [node name="Area2D" type="Area2D" parent="Level/Player"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Player/Area2D"]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_204an")
 
 [node name="PointLight2D" type="PointLight2D" parent="Level/Player"]
