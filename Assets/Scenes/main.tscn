@@ -42,6 +42,7 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_rj1b5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Level/Player"]
+rotation = 1.57079
 texture = ExtResource("5_lav37")
 
 [node name="Area2D" type="Area2D" parent="Level/Player"]
