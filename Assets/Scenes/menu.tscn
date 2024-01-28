@@ -85,6 +85,23 @@ custom_minimum_size = Vector2(800, 600)
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="RichTextLabel" type="RichTextLabel" parent="OptionsMenu/CenterContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.998
+offset_bottom = 0.200012
+bbcode_enabled = true
+text = "
+
+[font_size={50}][center][b]Knock knock!
+A game about \"Knock knock police\" getting rid of evil doers.[/b][/center][/font_size]
+
+[font_size={50}][center][b]Controlls:
+Left stick - walking
+Right stick - aiming
+Right trigger - shooting[/b][/center][/font_size]"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="OptionsMenu/CenterContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
@@ -101,6 +118,89 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "HUE"
 
+[node name="GameFinish" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1000, 800)
+offset_right = 1280.0
+offset_bottom = 800.0
+pivot_offset = Vector2(500, 400)
+
+[node name="Panel2" type="Panel" parent="GameFinish"]
+custom_minimum_size = Vector2(520, 800)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_82vas")
+
+[node name="CenterContainer" type="CenterContainer" parent="GameFinish"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameFinish/CenterContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="GameFinish/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WonText" type="RichTextLabel" parent="GameFinish/CenterContainer/VBoxContainer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.997
+anchor_bottom = 0.998
+offset_right = 0.399963
+offset_bottom = 0.200012
+bbcode_enabled = true
+text = "[font_size={70}][center][b]Congratulations![/b][/center][/font_size]
+
+
+
+[font_size={70}][center][b]You cleared the house of evil doers![/b][/center][/font_size]"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameFinish/CenterContainer/VBoxContainer/Panel/WonText"]
+layout_mode = 0
+offset_top = 462.0
+offset_right = 400.0
+offset_bottom = 537.0
+bbcode_enabled = true
+text = "[font_size={50}][center][b]Your time: [/b][/center][/font_size]"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="GameFinish/CenterContainer/VBoxContainer/Panel/WonText"]
+offset_left = 384.0
+offset_top = 462.0
+offset_right = 784.0
+offset_bottom = 537.0
+bbcode_enabled = true
+text = "[font_size={50}][center][b]00:00:00 [/b][/center][/font_size]"
+
+[node name="LostText" type="RichTextLabel" parent="GameFinish/CenterContainer/VBoxContainer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.997
+anchor_bottom = 0.998
+offset_right = 0.399963
+offset_bottom = 0.200012
+bbcode_enabled = true
+text = "
+
+
+
+
+
+
+
+[font_size={70}][center][b]You lost :(
+You can always knock again[/b][/center][/font_size]"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameFinish/CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="BackToMenu" type="Button" parent="GameFinish/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Back to menu
+"
+
 [connection signal="pressed" from="MainMenu/CenterContainer/MainContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MainMenu/CenterContainer/MainContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MainMenu/CenterContainer/MainContainer/Give_Up" to="." method="_on_give_up_pressed"]
@@ -108,3 +208,4 @@ text = "HUE"
 [connection signal="pressed" from="MainMenu/CenterContainer/MainContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer/Apply" to="." method="_on_apply_pressed"]
+[connection signal="pressed" from="GameFinish/CenterContainer/VBoxContainer/HBoxContainer/BackToMenu" to="." method="_on_back_to_menu_pressed"]

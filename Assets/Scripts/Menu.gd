@@ -80,3 +80,6 @@ func grab_start_focus():
 	
 func grab_resume_focus():
 	resume.grab_focus()
+
+func _on_back_to_menu_pressed():
+	get_tree().reload_current_scene()
