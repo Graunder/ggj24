@@ -5,6 +5,7 @@ var bulletSpeed = 2000
 var bullet = preload("res://Assets/Scenes/Bullet.tscn")
 
 @onready var target = $"../Target"
+@onready var menu = $"../../Camera/Menu"
 
 func _process(delta):
 	
@@ -26,6 +27,12 @@ func _process(delta):
 	if (Input.is_action_just_pressed("shoot")):
 		fire()
 		
+	#For testing
+	if(Input.is_action_just_pressed("FFF")):
+		menu._win_lose(false)
+	if(Input.is_action_just_pressed("GGG")):
+		menu._win_lose(true)
+		
 	move_and_slide()
 
 func fire():
@@ -37,7 +44,8 @@ func fire():
 	get_tree().get_root().get_node("main/Level").add_child(bullet_instance)
 	
 func kill():
-	get_tree().reload_current_scene()
+	#get_tree().reload_current_scene()
+	menu._win_lose(false)
 
 func _on_area_2d_body_entered(body):
 	if "Enemy" in body.name:

@@ -7,6 +7,7 @@ extends Control
 #Menus
 @onready var main_menu = $MainMenu
 @onready var options_menu = $OptionsMenu
+@onready var game_finish = $GameFinish
 
 #Main menu buttons
 @onready var play = $MainMenu/CenterContainer/MainContainer/Play
@@ -19,10 +20,19 @@ extends Control
 @onready var back = $OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer/Back
 @onready var apply = $OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer/Apply
 
+#Victory/Lose buttons
+@onready var back_to_menu = $GameFinish/CenterContainer/VBoxContainer/HBoxContainer/BackToMenu
+
+#Victory/Lose texts
+@onready var won_text = $GameFinish/CenterContainer/VBoxContainer/Panel/WonText
+@onready var time_text = $GameFinish/CenterContainer/VBoxContainer/Panel/WonText/TimeText
+@onready var lost_text = $GameFinish/CenterContainer/VBoxContainer/Panel/LostText
+
 func _on_play_pressed():
 	main.load_dev_scene()
 	level.get_tree().paused = false
 	player.show()
+	main.playing = true
 
 func _on_quit_pressed():
 	get_tree().quit()
@@ -30,6 +40,19 @@ func _on_quit_pressed():
 func _on_resume_pressed():
 	main.game_pause(false)
 	level.get_tree().paused = false
+	main.playing = true
+	
+func _win_lose(won : bool):
+	main.game_pause(true)
+	level.get_tree().paused = true
+	main.playing = false
+	game_finish.show()
+	if won:
+		main._process_time_played()
+		won_text.show()
+	else :
+		lost_text.show()
+	back_to_menu.grab_focus()
 
 func _on_give_up_pressed():
 	#main.unload_level()
@@ -37,6 +60,7 @@ func _on_give_up_pressed():
 	#switch_play_button(false)
 	#level.get_tree().paused = true
 	#player.hide()
+	main.time = 0.0
 	get_tree().reload_current_scene()
 
 func _on_options_pressed():
@@ -83,3 +107,4 @@ func grab_resume_focus():
 
 func _on_back_to_menu_pressed():
 	get_tree().reload_current_scene()
+	main.time = 0.0

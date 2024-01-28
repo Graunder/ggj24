@@ -1,10 +1,19 @@
 extends Node
 
 @onready var menu = $Camera/Menu
+@onready var time_text = $Camera/Menu/GameFinish/CenterContainer/VBoxContainer/Panel/WonText/TimeText
 @onready var level = $Level
 @onready var player = $Level/Player
 
 var level_instance
+
+#For level timer
+var time : float = 0.0
+var timeM : int = 0
+var timeS : int = 0
+var timeMS : int = 0
+var completion_time_text
+var playing : bool = false
 
 func unload_level():
 	if (is_instance_valid(level_instance)):
@@ -20,6 +29,7 @@ func load_level(level_name : String):
 		level.add_child(level_instance)
 		menu.hide()
 		menu.set_process(false)
+	time = 0.0
 
 func load_dev_scene():
 	menu.switch_play_button(true)
@@ -30,16 +40,20 @@ func game_pause(should_pause : bool):
 	level.get_tree().paused = should_pause
 	if (should_pause):
 		menu.show()
+		playing = false
 		#Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	else:
 		menu.hide()
+		playing = true
 		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func simple_pause():
 	level.get_tree().paused = true
+	#playing = false
 
 func reset_pause():
 	level.get_tree().paused = false
+	#playing = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -49,10 +63,23 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if(playing):
+		time += delta
+		timeMS = fmod(time, 1) * 100
+		timeS = fmod(time, 60)
+		timeM = fmod(time, 3600) / 60
+	
 	if Input.is_action_just_pressed("esc") && level_instance != null:
 		if menu.is_visible_in_tree():
 			game_pause(false)
+			playing = false
 		else:
 			game_pause(true)
 			menu.grab_resume_focus()
+			playing = true
 
+func _process_time_played():
+	completion_time_text = "%02d:" % timeM
+	completion_time_text += "%02d." % timeS
+	completion_time_text += "%03d" % timeMS
+	time_text.text = "[font_size={50}][center][b]" + completion_time_text + " [/b][/center][/font_size]"

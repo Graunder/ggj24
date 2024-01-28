@@ -119,6 +119,7 @@ size_flags_horizontal = 3
 text = "HUE"
 
 [node name="GameFinish" type="MarginContainer" parent="."]
+visible = false
 custom_minimum_size = Vector2(1000, 800)
 offset_right = 1280.0
 offset_bottom = 800.0
@@ -163,7 +164,7 @@ offset_bottom = 537.0
 bbcode_enabled = true
 text = "[font_size={50}][center][b]Your time: [/b][/center][/font_size]"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="GameFinish/CenterContainer/VBoxContainer/Panel/WonText"]
+[node name="TimeText" type="RichTextLabel" parent="GameFinish/CenterContainer/VBoxContainer/Panel/WonText"]
 offset_left = 384.0
 offset_top = 462.0
 offset_right = 784.0
