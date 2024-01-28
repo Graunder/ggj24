@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://be2541wnqotc2"]
+[gd_scene load_steps=8 format=3 uid="uid://be2541wnqotc2"]
 
 [ext_resource type="PackedScene" uid="uid://cd81jf2fqha5s" path="res://Assets/Scenes/wall.tscn" id="2_7dlrm"]
 [ext_resource type="Texture2D" uid="uid://bq46me7ahdarg" path="res://Assets/Textures/Sprites/Temp_Wall.png" id="2_x80jg"]
 [ext_resource type="PackedScene" uid="uid://madaf4iw7hn4" path="res://Assets/Scenes/floor_tile.tscn" id="3_4x0om"]
 [ext_resource type="PackedScene" uid="uid://cm8ghfnphcmgs" path="res://Assets/Scenes/door.tscn" id="4_c7plc"]
+[ext_resource type="PackedScene" uid="uid://b851ownospp0r" path="res://Assets/Scenes/Enemy.tscn" id="5_hvkar"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_836eu"]
 scenes/1/scene = ExtResource("2_7dlrm")
@@ -223,3 +224,6 @@ rotation = 1.5708
 [node name="Door12" parent="." instance=ExtResource("4_c7plc")]
 position = Vector2(-457, -3933)
 rotation = 1.57079
+
+[node name="Enemy" parent="." instance=ExtResource("5_hvkar")]
+position = Vector2(-40, -976)
