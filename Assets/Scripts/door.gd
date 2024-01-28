@@ -7,6 +7,7 @@ var menu : Control
 var dialog_instance
 var dialog_box_path
 
+@export var room_of_enemies : Node
 
 func _ready():
 	main = get_tree().get_root().get_node("main")
@@ -27,6 +28,12 @@ func _on_area_2d_body_entered(body):
 			camera.add_child(dialog_instance)
 			var box = camera.get_node("Dialog_Box")
 			await box.door_interaction_complete
+			
+			if(room_of_enemies != null):
+				for n in room_of_enemies.get_children():
+					n.show()
+					n.can_attack = true
+			
 			free()
 			#await box.isDone
 			#queue_free()
