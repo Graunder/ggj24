@@ -32,11 +32,12 @@ func _on_resume_pressed():
 	level.get_tree().paused = false
 
 func _on_give_up_pressed():
-	main.unload_level()
-	main.reset_pause()
-	switch_play_button(false)
-	level.get_tree().paused = true
-	player.hide()
+	#main.unload_level()
+	#main.reset_pause()
+	#switch_play_button(false)
+	#level.get_tree().paused = true
+	#player.hide()
+	get_tree().reload_current_scene()
 
 func _on_options_pressed():
 	enable_options_menu(true)
