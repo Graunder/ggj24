@@ -32,6 +32,7 @@ func _process(delta):
 func fire():
 	var bullet_instance = bullet.instantiate()
 	bullet_instance.position = get_global_position()
-	bullet_instance.rotation_degrees = global_position.direction_to(target.position).angle()
-	bullet_instance.apply_impulse(Vector2(), Vector2(bulletSpeed, 0).rotated(global_rotation))
-	get_tree().get_root().call_deferred("add_child", bullet_instance)
+	bullet_instance.rotation_degrees = rotation_degrees
+	bullet_instance.apply_impulse(Vector2(bulletSpeed, 0).rotated(rotation))
+	#get_tree().get_root().call_deferred("add_child", bullet_instance)
+	get_tree().get_root().add_child(bullet_instance)
