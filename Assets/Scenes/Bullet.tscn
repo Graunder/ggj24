@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://da3ndnwrpraok"]
+[gd_scene load_steps=4 format=3 uid="uid://da3ndnwrpraok"]
 
+[ext_resource type="Script" path="res://Assets/Textures/Sprites/Bullet.gd" id="1_31c6c"]
 [ext_resource type="Texture2D" uid="uid://do1c2ghd6lh5c" path="res://Assets/Textures/Sprites/Temp_Bullet.png" id="1_gtehy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2kk3"]
@@ -10,6 +11,7 @@ collision_layer = 2
 collision_mask = 3
 mass = 0.01
 gravity_scale = 0.0
+script = ExtResource("1_31c6c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_j2kk3")
