@@ -69,7 +69,7 @@ func _process(delta):
 		timeS = fmod(time, 60)
 		timeM = fmod(time, 3600) / 60
 	
-	if Input.is_action_just_pressed("esc") && level_instance != null:
+	if Input.is_action_just_pressed("esc") && !level.get_tree().paused && level_instance != null:
 		if menu.is_visible_in_tree():
 			game_pause(false)
 			playing = false
