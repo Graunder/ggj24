@@ -31,6 +31,7 @@ z_index = 10
 texture = ExtResource("4_lf3fo")
 
 [node name="Player" type="CharacterBody2D" parent="Level"]
+visible = false
 z_index = 2
 script = ExtResource("3_ufkiy")
 
