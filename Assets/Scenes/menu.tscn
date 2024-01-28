@@ -80,6 +80,10 @@ offset_right = 1280.0
 offset_bottom = 800.0
 pivot_offset = Vector2(500, 400)
 
+[node name="Sprite2D" type="Sprite2D" parent="OptionsMenu"]
+position = Vector2(640, 400)
+texture = ExtResource("2_lurer")
+
 [node name="Panel2" type="Panel" parent="OptionsMenu"]
 custom_minimum_size = Vector2(520, 800)
 layout_mode = 2

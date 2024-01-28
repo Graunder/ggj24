@@ -46,6 +46,7 @@ func _win_lose(won : bool):
 	main.game_pause(true)
 	level.get_tree().paused = true
 	main.playing = false
+	main_menu.hide()
 	game_finish.show()
 	if won:
 		main._process_time_played()
