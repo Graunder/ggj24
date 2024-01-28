@@ -1,5 +1,7 @@
 extends Node
 
+var enemy_count : int = 0
+
 var bad_jokes = [["res://Assets/Scenes/Dialog_boxes/dialog_box_1.tscn", false], 
 ["res://Assets/Scenes/Dialog_boxes/dialog_box_2.tscn", false],
 ["res://Assets/Scenes/Dialog_boxes/dialog_box_3.tscn", false],

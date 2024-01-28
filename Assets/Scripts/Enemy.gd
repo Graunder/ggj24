@@ -4,6 +4,9 @@ var motion = Vector2()
 
 var can_attack : bool = false
 
+func _ready():
+	Global.enemy_count += 1
+
 func _process(delta):
 	if(can_attack):
 		var Player = get_tree().get_root().get_node("main/Level/Player")
@@ -16,4 +19,5 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	if "Bullet" in body.name:
+		Global.enemy_count -= 1
 		queue_free()

@@ -77,6 +77,9 @@ func _process(delta):
 			game_pause(true)
 			menu.grab_resume_focus()
 			playing = true
+			
+	if(level_instance != null && Global.enemy_count == 0):
+		menu._win_lose(true)
 
 func _process_time_played():
 	completion_time_text = "%02d:" % timeM
