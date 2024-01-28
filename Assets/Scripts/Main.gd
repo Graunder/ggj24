@@ -5,7 +5,8 @@ extends Node
 @onready var level = $Level
 @onready var player = $Level/Player
 
-@onready var audio_stream_player_2d = $AudioStreamPlayer2D
+@onready var sfx_bg_music = $SFX_bg_music
+@onready var sfx_fbi = $SFX_fbi
 
 var level_instance
 
@@ -88,3 +89,6 @@ func _process_time_played():
 	completion_time_text += "%02d." % timeS
 	completion_time_text += "%03d" % timeMS
 	time_text.text = "[font_size={50}][center][b]" + completion_time_text + " [/b][/center][/font_size]"
+
+func _play_fbi():
+	sfx_fbi.play()

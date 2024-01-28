@@ -28,7 +28,7 @@ func _on_area_2d_body_entered(body):
 			camera.add_child(dialog_instance)
 			var box = camera.get_node("Dialog_Box")
 			await box.door_interaction_complete
-			
+			main._play_fbi()
 			if(room_of_enemies != null):
 				for n in room_of_enemies.get_children():
 					n.show()
