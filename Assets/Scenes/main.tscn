@@ -67,3 +67,5 @@ offset_right = -640.0
 offset_bottom = -400.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="Node2D" type="Node2D" parent="."]
