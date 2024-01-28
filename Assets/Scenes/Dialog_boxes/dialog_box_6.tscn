@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6bh1tc3bood"]
+[gd_scene load_steps=3 format=3 uid="uid://c6bh1tc3bood"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/dialog_box.gd" id="1_hbux2"]
+[ext_resource type="AudioStream" uid="uid://dbe7prwjqg8j2" path="res://Assets/SFX/triKnock05.wav" id="2_ksg3g"]
 
 [node name="Dialog_Box" type="Control"]
 layout_mode = 3
@@ -194,6 +195,11 @@ bbcode_enabled = true
 text = "[font_size={100}][center][b]Peas to meet you![/b][/center][/font_size]"
 fit_content = true
 scroll_active = false
+
+[node name="SFX_Knock" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ksg3g")
+volume_db = 4.0
+max_distance = 30000.0
 
 [connection signal="pressed" from="MarginContainer/Panel/KnockButton/Button2" to="." method="knock_knock"]
 [connection signal="pressed" from="MarginContainer/Panel/NameButton/Button2" to="." method="tell_name"]

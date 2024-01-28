@@ -11,6 +11,7 @@ extends Control
 #@onready var line = $MarginContainer/Panel/Line
 @onready var line = $MarginContainer/Panel/Line/Button2
 @onready var line_text = $MarginContainer/Panel/LineText
+@onready var sfx_knock = $SFX_Knock
 
 var main : Node
 signal door_interaction_complete
@@ -23,6 +24,7 @@ func knock_knock():
 	start_text.hide()
 	knock_button.hide()
 	knock_text.show()
+	sfx_knock.play()
 	await get_tree().create_timer(2.0).timeout
 	knock_text.hide()
 	answer_text.show()

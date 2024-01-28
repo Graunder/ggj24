@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://2ellra2i5itc"]
+[gd_scene load_steps=12 format=3 uid="uid://2ellra2i5itc"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_3o3yr"]
 [ext_resource type="Script" path="res://Assets/Scripts/Camera.gd" id="2_3t4gq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bm4xvfswfx2xb" path="res://Assets/Textures/Sprites/Temp_Target.png" id="4_lf3fo"]
 [ext_resource type="Texture2D" uid="uid://cq1l0ppum40q6" path="res://Assets/Textures/Sprites/Temp_Player.png" id="4_q0qbp"]
 [ext_resource type="Texture2D" uid="uid://hxmaia1ot0l4" path="res://Assets/Textures/Sprites/light.png" id="6_k3hrs"]
+[ext_resource type="AudioStream" uid="uid://dk568hlhi68nq" path="res://Assets/SFX/Cyberpunk Moonlight Sonata.mp3" id="9_blw38"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rj1b5"]
 size = Vector2(64, 64)
@@ -68,5 +69,11 @@ offset_right = -640.0
 offset_bottom = -400.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="SFX_bg_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_blw38")
+volume_db = -2.0
+autoplay = true
+max_distance = 30000.0
 
 [connection signal="body_entered" from="Level/Player/Area2D" to="Level/Player" method="_on_area_2d_body_entered"]

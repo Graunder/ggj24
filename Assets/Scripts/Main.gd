@@ -5,7 +5,7 @@ extends Node
 @onready var level = $Level
 @onready var player = $Level/Player
 
-const CYBERPUNK_MOONLIGHT_SONATA = preload("res://Assets/SFX/Cyberpunk Moonlight Sonata.mp3")
+@onready var audio_stream_player_2d = $AudioStreamPlayer2D
 
 var level_instance
 
