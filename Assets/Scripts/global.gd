@@ -12,3 +12,8 @@ var bad_jokes = [["res://Assets/Scenes/Dialog_boxes/dialog_box_1.tscn", false],
 ["res://Assets/Scenes/Dialog_boxes/dialog_box_10.tscn", false],
 ["res://Assets/Scenes/Dialog_boxes/dialog_box_11.tscn", false]]
 
+func _reset_globals():
+	for i in bad_jokes:
+		i[1] = false
+	#print("Finished Reseting Globals")
+

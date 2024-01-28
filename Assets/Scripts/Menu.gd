@@ -52,6 +52,7 @@ func _win_lose(won : bool):
 		won_text.show()
 	else :
 		lost_text.show()
+	Global._reset_globals()
 	back_to_menu.grab_focus()
 
 func _on_give_up_pressed():
@@ -60,6 +61,7 @@ func _on_give_up_pressed():
 	#switch_play_button(false)
 	#level.get_tree().paused = true
 	#player.hide()
+	Global._reset_globals()
 	main.time = 0.0
 	get_tree().reload_current_scene()
 
@@ -106,5 +108,7 @@ func grab_resume_focus():
 	resume.grab_focus()
 
 func _on_back_to_menu_pressed():
-	get_tree().reload_current_scene()
 	main.time = 0.0
+	Global._reset_globals()
+	get_tree().reload_current_scene()
+	
