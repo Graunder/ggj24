@@ -189,52 +189,127 @@ position = Vector2(185, -1309)
 rotation = 1.5708
 room_of_enemies = NodePath("../Room_Enemies6")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Door"]
+position = Vector2(364.817, -863.713)
+scale = Vector2(27.8999, 26.8749)
+texture = ExtResource("2_x80jg")
+
 [node name="Door2" parent="." node_paths=PackedStringArray("room_of_enemies") instance=ExtResource("4_c7plc")]
 position = Vector2(-200, -925)
 rotation = 1.5708
 room_of_enemies = NodePath("../Room_Enemies")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Door2"]
+position = Vector2(377.146, 792.923)
+scale = Vector2(19.5, 24.3749)
+texture = ExtResource("2_x80jg")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Door2"]
+position = Vector2(-272, 1092)
+scale = Vector2(5.53938, 7.18721)
+texture = ExtResource("2_x80jg")
+
 [node name="Door3" parent="." node_paths=PackedStringArray("room_of_enemies") instance=ExtResource("4_c7plc")]
 position = Vector2(-1287, -1373)
 room_of_enemies = NodePath("../Room_Enemies2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Door3"]
+position = Vector2(-140, -406)
+scale = Vector2(22.6563, 12.9398)
+texture = ExtResource("2_x80jg")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Door3"]
+position = Vector2(-396.573, -1095)
+scale = Vector2(13.5758, 12.9398)
+texture = ExtResource("2_x80jg")
 
 [node name="Door4" parent="." node_paths=PackedStringArray("room_of_enemies") instance=ExtResource("4_c7plc")]
 position = Vector2(-200, -2269)
 rotation = 1.5708
 room_of_enemies = NodePath("../Room_Enemies3")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Door4"]
+position = Vector2(-184.143, 250.59)
+scale = Vector2(12.6249, 8.23952)
+texture = ExtResource("2_x80jg")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Door4"]
+position = Vector2(-314.491, 700.896)
+scale = Vector2(7.57384, 7.46782)
+texture = ExtResource("2_x80jg")
+
 [node name="Door5" parent="." node_paths=PackedStringArray("room_of_enemies") instance=ExtResource("4_c7plc")]
 position = Vector2(185, -2589)
 rotation = 1.5708
 room_of_enemies = NodePath("../Room_Enemies7")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Door5"]
+position = Vector2(-365.746, -890.338)
+scale = Vector2(17.1849, 27.3214)
+texture = ExtResource("2_x80jg")
+
 [node name="Door6" parent="." node_paths=PackedStringArray("room_of_enemies") instance=ExtResource("4_c7plc")]
 position = Vector2(1016, -1821)
 room_of_enemies = NodePath("../Room_Enemies4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Door6"]
+position = Vector2(-8.49999, -290.527)
+scale = Vector2(13.1406, 8.57728)
+texture = ExtResource("2_x80jg")
 
 [node name="Door7" parent="." node_paths=PackedStringArray("room_of_enemies") instance=ExtResource("4_c7plc")]
 position = Vector2(1848, -733)
 rotation = 1.57079
 room_of_enemies = NodePath("../Room_Enemies5")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Door7"]
+position = Vector2(-0.644043, -885.576)
+scale = Vector2(19.2684, 27.4702)
+texture = ExtResource("2_x80jg")
+
 [node name="Door8" parent="." node_paths=PackedStringArray("room_of_enemies") instance=ExtResource("4_c7plc")]
 position = Vector2(-1288, -4765)
 room_of_enemies = NodePath("../Room_Enemies9")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Door8"]
+position = Vector2(184.5, -412)
+scale = Vector2(18.2344, 12.9398)
+texture = ExtResource("2_x80jg")
 
 [node name="Door9" parent="." node_paths=PackedStringArray("room_of_enemies") instance=ExtResource("4_c7plc")]
 position = Vector2(760, -3933)
 rotation = 1.5708
 room_of_enemies = NodePath("../Room_Enemies10")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Door9"]
+position = Vector2(-244.777, -412)
+scale = Vector2(14.2385, 12.9398)
+texture = ExtResource("2_x80jg")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Door9"]
+position = Vector2(-1473.19, -727)
+scale = Vector2(25.8139, 12.9398)
+texture = ExtResource("2_x80jg")
+
 [node name="Door10" parent="." node_paths=PackedStringArray("room_of_enemies") instance=ExtResource("4_c7plc")]
 position = Vector2(1080, -5597)
 rotation = 1.5708
 room_of_enemies = NodePath("../Room_Enemies11")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Door10"]
+position = Vector2(132.614, 811.331)
+scale = Vector2(24.3406, 25.3571)
+texture = ExtResource("2_x80jg")
+
 [node name="Door12" parent="." node_paths=PackedStringArray("room_of_enemies") instance=ExtResource("4_c7plc")]
 position = Vector2(-457, -3933)
 rotation = 1.57079
 room_of_enemies = NodePath("../Room_Enemies8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Door12"]
+position = Vector2(-85.7562, 570.635)
+scale = Vector2(23.4286, 17.9909)
+texture = ExtResource("2_x80jg")
 
 [node name="Room_Enemies" type="Node" parent="."]
 

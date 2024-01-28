@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cm8ghfnphcmgs"]
+[gd_scene load_steps=6 format=3 uid="uid://cm8ghfnphcmgs"]
 
 [ext_resource type="Texture2D" uid="uid://bdb48h8e6evcj" path="res://Assets/Textures/Sprites/Temp_door.png" id="1_3rkjv"]
 [ext_resource type="Script" path="res://Assets/Scripts/door.gd" id="1_mfmu4"]
@@ -8,6 +8,9 @@ size = Vector2(320, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxcqx"]
 size = Vector2(192, 192)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sbo1e"]
+polygon = PackedVector2Array(-160, -32, -160, 32, 160, 32, 160, -32)
 
 [node name="Door" type="Node2D"]
 script = ExtResource("1_mfmu4")
@@ -24,5 +27,8 @@ shape = SubResource("RectangleShape2D_80see")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_hxcqx")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_sbo1e")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
