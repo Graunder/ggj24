@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cm8ghfnphcmgs"]
 
-[ext_resource type="Texture2D" uid="uid://bdb48h8e6evcj" path="res://Assets/Textures/Sprites/Temp_door.png" id="1_3rkjv"]
 [ext_resource type="Script" path="res://Assets/Scripts/door.gd" id="1_mfmu4"]
+[ext_resource type="Texture2D" uid="uid://chxxtd7j0qkfv" path="res://Assets/Textures/Sprites/A_Door.png" id="2_62hnk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80see"]
 size = Vector2(320, 64)
@@ -10,13 +10,13 @@ size = Vector2(320, 64)
 size = Vector2(192, 192)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sbo1e"]
-polygon = PackedVector2Array(-160, -32, -160, 32, 160, 32, 160, -32)
+polygon = PackedVector2Array(160, -20, 140, -20, 140, -18, 20, -18, 20, -20, -20, -20, -20, -18, -117, -18, -117, -21, -116, -21, -116, -27, -122, -27, -122, -21, -121, -21, -121, -18, -140, -18, -140, -20, -161, -20, -161, 20, -140, 20, -140, 18, -20, 18, -20, 20, 20, 20, 20, 18, 117, 18, 117, 21, 116, 21, 116, 27, 122, 27, 122, 21, 121, 21, 121, 18, 140, 18, 140, 20, 161, 20, 161, -20)
 
 [node name="Door" type="Node2D"]
 script = ExtResource("1_mfmu4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_3rkjv")
+texture = ExtResource("2_62hnk")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
 
