@@ -10,7 +10,6 @@ func _process(delta):
 	
 	var joystick_vector = Vector2(Input.get_joy_axis(0, JOY_AXIS_RIGHT_X), Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y))
 	var joystick_angle = atan2(joystick_vector.y, joystick_vector.x)
-	print(joystick_angle)
 	rotation = joystick_angle
 	
 	var direction_x = Input.get_axis("left", "right")
@@ -35,4 +34,12 @@ func fire():
 	bullet_instance.rotation_degrees = rotation_degrees
 	bullet_instance.apply_impulse(Vector2(bulletSpeed, 0).rotated(rotation))
 	#get_tree().get_root().call_deferred("add_child", bullet_instance)
-	get_tree().get_root().add_child(bullet_instance)
+	get_tree().get_root().get_node("main/Level").add_child(bullet_instance)
+	
+func kill():
+	get_tree().reload_current_scene()
+
+
+func _on_area_2d_body_entered(body):
+	if "Enemy" in body.name:
+		kill()

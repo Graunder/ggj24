@@ -31,7 +31,6 @@ z_index = 10
 texture = ExtResource("4_lf3fo")
 
 [node name="Player" type="CharacterBody2D" parent="Level"]
-visible = false
 z_index = 2
 script = ExtResource("3_ufkiy")
 
@@ -68,3 +67,5 @@ offset_right = -640.0
 offset_bottom = -400.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[connection signal="body_entered" from="Level/Player/Area2D" to="Level/Player" method="_on_area_2d_body_entered"]
