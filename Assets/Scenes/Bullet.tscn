@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://do1c2ghd6lh5c" path="res://Assets/Textures/Sprites/Temp_Bullet.png" id="1_gtehy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2kk3"]
-size = Vector2(12, 12)
+size = Vector2(14, 14)
 
 [node name="Bullet" type="RigidBody2D"]
 collision_layer = 2
