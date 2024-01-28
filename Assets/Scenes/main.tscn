@@ -19,8 +19,16 @@ size = Vector2(68, 68)
 process_mode = 3
 script = ExtResource("1_3o3yr")
 
-[node name="Level" type="Node3D" parent="."]
+[node name="Level" type="Node2D" parent="."]
 process_mode = 1
+
+[node name="Target" type="Node2D" parent="Level"]
+visible = false
+script = ExtResource("4_fawq8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/Target"]
+z_index = 10
+texture = ExtResource("4_lf3fo")
 
 [node name="Player" type="CharacterBody2D" parent="Level"]
 visible = false
@@ -37,13 +45,6 @@ texture = ExtResource("4_q0qbp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Player/Area2D"]
 shape = SubResource("RectangleShape2D_204an")
-
-[node name="Target" type="Node2D" parent="Level/Player"]
-script = ExtResource("4_fawq8")
-
-[node name="Sprite2D" type="Sprite2D" parent="Level/Player/Target"]
-z_index = 10
-texture = ExtResource("4_lf3fo")
 
 [node name="PointLight2D" type="PointLight2D" parent="Level/Player"]
 color = Color(0.956863, 0.964706, 0.952941, 0.894118)
@@ -67,5 +68,3 @@ offset_right = -640.0
 offset_bottom = -400.0
 grow_horizontal = 1
 grow_vertical = 1
-
-[node name="Node2D" type="Node2D" parent="."]
