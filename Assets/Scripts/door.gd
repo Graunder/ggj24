@@ -5,7 +5,7 @@ var camera : Camera2D
 var menu : Control
 
 var dialog_instance
-
+var dialog_box_path
 
 
 func _ready():
@@ -16,7 +16,11 @@ func _ready():
 func _on_area_2d_body_entered(body):
 	if(body.get_name() == "Player"):
 		main.simple_pause()
-		var dialog_box_path := "res://Assets/Scenes/dialog_box.tscn"
+		for n in Global.bad_jokes:
+			if(n[1] == false):
+				dialog_box_path = n[0]
+				n[1] = true
+				break
 		var dialog_box_resource := load(dialog_box_path)
 		if(dialog_box_resource):
 			dialog_instance = dialog_box_resource.instantiate()

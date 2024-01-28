@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c33ef5g4k58ra"]
+[gd_scene load_steps=2 format=3 uid="uid://dywuodgyflx0h"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/dialog_box.gd" id="1_gsobi"]
+[ext_resource type="Script" path="res://Assets/Scripts/dialog_box.gd" id="1_tdhsa"]
 
 [node name="Dialog_Box" type="Control"]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_gsobi")
+script = ExtResource("1_tdhsa")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(1180, 300)
@@ -129,7 +129,7 @@ visible = false
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "name button
+text = "Figs.
 "
 
 [node name="NameAnswerText" type="RichTextLabel" parent="MarginContainer/Panel"]
@@ -148,7 +148,7 @@ offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[font_size={100}][center][b]name who?[/b][/center][/font_size]"
+text = "[font_size={100}][center][b]Figs who?[/b][/center][/font_size]"
 fit_content = true
 scroll_active = false
 
@@ -172,7 +172,7 @@ visible = false
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "line
+text = "Figs...
 "
 
 [node name="LineText" type="RichTextLabel" parent="MarginContainer/Panel"]
@@ -191,7 +191,7 @@ offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[font_size={100}][center][b]punchline[/b][/center][/font_size]"
+text = "[font_size={70}][center][b]Figs the doorbell, I’ve been knocking forever![/b][/center][/font_size]"
 fit_content = true
 scroll_active = false
 
