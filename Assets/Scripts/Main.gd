@@ -5,6 +5,8 @@ extends Node
 @onready var level = $Level
 @onready var player = $Level/Player
 
+const CYBERPUNK_MOONLIGHT_SONATA = preload("res://Assets/SFX/Cyberpunk Moonlight Sonata.mp3")
+
 var level_instance
 
 #For level timer
